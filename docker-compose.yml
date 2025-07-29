@@ -6,4 +6,14 @@ services:
     build: .
     ports:
       - "8000:8000"
-   
+    volumes:
+      - laravel-volume:/var/www/html
+    networks:
+      - app-net
+
+volumes:
+   laravel-volume:
+
+networks:
+  app-net:
+    driver: bridge
